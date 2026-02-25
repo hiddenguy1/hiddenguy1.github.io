@@ -1,0 +1,25 @@
+# Hexo 目录
+node_modules/
+public/
+.db.json
+*.log
+deploy_git/
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 敏感信息（请勿上传）
+# 如果有包含个人信息的文档，请在此添加
+
+# 临时文件
+*.tmp
+*.temp
+.temp/

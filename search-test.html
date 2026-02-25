@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索功能测试</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .test-section {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .status {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 3px;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .info {
+      background-color: #d1ecf1;
+      color: #0c5460;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hexo 搜索功能测试页面</h1>
+
+  <div class="test-section">
+    <h2>测试项目</h2>
+    <div id="test-results"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>搜索框测试</h2>
+    <input type="text" id="search-input-test" placeholder="输入搜索关键词..." style="width: 300px; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+    <button onclick="testSearch()" style="padding: 8px 15px; background: #4d4d4d; color: white; border: none; border-radius: 3px; cursor: pointer;">搜索</button>
+    <div id="search-results-test" style="margin-top: 15px;"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>文件检查</h2>
+    <div id="file-check"></div>
+  </div>
+
+  <script>
+    const testResults = document.getElementById('test-results');
+    const fileCheck = document.getElementById('file-check');
+
+    function addResult(message, type = 'info') {
+      const div = document.createElement('div');
+      div.className = `status ${type}`;
+      div.textContent = message;
+      testResults.appendChild(div);
+    }
+
+    function addFileCheck(message, exists) {
+      const div = document.createElement('div');
+      div.className = `status ${exists ? 'success' : 'error'}`;
+      div.textContent = `${message}: ${exists ? '存在' : '不存在'}`;
+      fileCheck.appendChild(div);
+    }
+
+    // 测试 hexo-generator-searchdb 配置
+    async function testConfiguration() {
+      addResult('正在检查配置...', 'info');
+
+      try {
+        // 尝试加载 search.xml
+        const response = await fetch('/search.xml');
+        if (response.ok) {
+          addResult('search.xml 文件存在且可访问', 'success');
+
+          // 尝试解析 XML
+          const text = await response.text();
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(text, 'text/xml');
+
+          const entries = xmlDoc.querySelectorAll('entry');
+          addResult(`search.xml 包含 ${entries.length} 个条目`, entries.length > 0 ? 'success' : 'error');
+
+          if (entries.length > 0) {
+            const firstEntry = entries[0];
+            const title = firstEntry.querySelector('title')?.textContent || '无标题';
+            const url = firstEntry.querySelector('url')?.textContent || '无链接';
+            addResult(`第一个条目: ${title} - ${url}`, 'success');
+          }
+        } else {
+          addResult('search.xml 文件不存在或无法访问 (HTTP ' + response.status + ')', 'error');
+          addResult('请先运行 hexo generate 生成搜索索引文件', 'info');
+        }
+      } catch (error) {
+        addResult('加载 search.xml 失败: ' + error.message, 'error');
+        addResult('可能需要启动本地服务器: hexo server', 'info');
+      }
+    }
+
+    // 测试搜索功能
+    async function testSearch() {
+      const query = document.getElementById('search-input-test').value.trim();
+      const resultsDiv = document.getElementById('search-results-test');
+
+      if (!query) {
+        resultsDiv.innerHTML = '<div class="status error">请输入搜索关键词</div>';
+        return;
+      }
+
+      resultsDiv.innerHTML = '<div class="status info">正在搜索...</div>';
+
+      try {
+        const response = await fetch('/search.xml');
+        if (!response.ok) {
+          throw new Error('无法加载搜索索引');
+        }
+
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(text, 'text/xml');
+        const entries = xmlDoc.querySelectorAll('entry');
+
+        const results = [];
+        const queryLower = query.toLowerCase();
+
+        entries.forEach(entry => {
+          const title = entry.querySelector('title')?.textContent || '';
+          const url = entry.querySelector('url')?.textContent || '';
+          const content = entry.querySelector('content')?.textContent || '';
+
+          if (title.toLowerCase().indexOf(queryLower) > -1 ||
+              content.toLowerCase().indexOf(queryLower) > -1) {
+            results.push({ title, url, content });
+          }
+        });
+
+        if (results.length === 0) {
+          resultsDiv.innerHTML = '<div class="status info">未找到相关结果</div>';
+        } else {
+          let html = `<div class="status success">找到 ${results.length} 个结果:</div>`;
+          results.slice(0, 5).forEach(result => {
+            html += `<div style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-radius: 3px;">`;
+            html += `<a href="${result.url}" style="font-weight: bold; color: #4d4d4d;">${result.title}</a><br>`;
+            html += `<span style="font-size: 12px; color: #666;">${result.content.substring(0, 100)}...</span>`;
+            html += `</div>`;
+          });
+          resultsDiv.innerHTML = html;
+        }
+      } catch (error) {
+        resultsDiv.innerHTML = `<div class="status error">搜索失败: ${error.message}</div>`;
+      }
+    }
+
+    // 检查必要文件
+    function checkFiles() {
+      const files = [
+        '/themes/yilia/source/js/search.js',
+        '/themes/yilia/source/css/search.css'
+      ];
+
+      files.forEach(file => {
+        fetch(file).then(response => {
+          addFileCheck(file, response.ok);
+        }).catch(() => {
+          addFileCheck(file, false);
+        });
+      });
+    }
+
+    // 页面加载时运行测试
+    window.addEventListener('DOMContentLoaded', () => {
+      addResult('开始测试搜索功能配置...', 'info');
+      testConfiguration();
+      checkFiles();
+    });
+
+    // 回车搜索
+    document.getElementById('search-input-test').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        testSearch();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "hexo-source",
+  "version": "1.0.0",
+  "description": "Hexo 博客源码",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node node_modules/hexo/bin/hexo server",
+    "build": "node node_modules/hexo/bin/hexo generate",
+    "deploy": "node node_modules/hexo/bin/hexo deploy",
+    "new": "node node_modules/hexo/bin/hexo new",
+    "clean": "node node_modules/hexo/bin/hexo clean"
+  },
+  "keywords": [
+    "hexo",
+    "blog"
+  ],
+  "author": "dudu",
+  "license": "ISC",
+  "dependencies": {
+    "hexo": "^5.1.1",
+    "hexo-asset-image": "^1.0.0",
+    "hexo-deployer-git": "^3.0.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-robotstxt": "^0.2.0",
+    "hexo-generator-searchdb": "^1.5.0",
+    "hexo-generator-sitemap": "^3.0.1",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-related-popular-posts": "^5.0.1",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^4.0.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^2.0.0",
+    "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "hexo-cli": "^4.3.2"
+  }
+}
