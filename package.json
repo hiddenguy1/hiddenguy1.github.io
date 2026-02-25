@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Hexo 博客源码",
   "main": "index.js",
+  "hexo": {
+    "version": "8.1.1"
+  },
   "scripts": {
     "dev": "node node_modules/hexo/bin/hexo server",
     "build": "node node_modules/hexo/bin/hexo generate",
@@ -17,7 +20,6 @@
   "author": "dudu",
   "license": "ISC",
   "dependencies": {
-    "hexo": "^5.1.1",
     "hexo-asset-image": "^1.0.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
@@ -35,6 +37,7 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
+    "hexo": "^8.1.1",
     "hexo-cli": "^4.3.2"
   }
 }
