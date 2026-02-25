@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/09/09/Hello-World/</url>
+    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p>欢迎来到我的博客!</p>
+<p>这是使用 Hexo 搭建的第一篇文章。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 Hexo</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化博客</span></span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务器</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>创建新文章:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多内容请查看其他文章。</p>
+]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 操作基础</title>
+    <url>/2020/10/05/Ubuntu%E6%93%8D%E4%BD%9C%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Ubuntu-操作基础"><a href="#Ubuntu-操作基础" class="headerlink" title="Ubuntu 操作基础"></a>Ubuntu 操作基础</h1><p>Ubuntu 是一个流行的 Linux 发行版,本文介绍一些基础操作。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前目录</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出文件</span></span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="built_in">ls</span> -la  <span class="comment"># 显示所有文件(包括隐藏文件)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换目录</span></span><br><span class="line"><span class="built_in">cd</span> /path/to/directory</span><br><span class="line"><span class="built_in">cd</span> ~    <span class="comment"># 回到用户主目录</span></span><br><span class="line"><span class="built_in">cd</span> ..   <span class="comment"># 返回上一级目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> <span class="built_in">dirname</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="built_in">touch</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件</span></span><br><span class="line"><span class="built_in">cp</span> <span class="built_in">source</span> destination</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动/重命名文件</span></span><br><span class="line"><span class="built_in">mv</span> oldname newname</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> filename</span><br><span class="line"><span class="built_in">rm</span> -r <span class="built_in">dirname</span>  <span class="comment"># 删除目录</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件查看"><a href="#文件查看" class="headerlink" title="文件查看"></a>文件查看</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看文件内容</span></span><br><span class="line"><span class="built_in">cat</span> filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分页查看</span></span><br><span class="line">more filename</span><br><span class="line">less filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件头部</span></span><br><span class="line"><span class="built_in">head</span> filename</span><br><span class="line"><span class="built_in">head</span> -n 10 filename  <span class="comment"># 查看前10行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件尾部</span></span><br><span class="line"><span class="built_in">tail</span> filename</span><br><span class="line"><span class="built_in">tail</span> -n 10 filename  <span class="comment"># 查看后10行</span></span><br><span class="line"><span class="built_in">tail</span> -f filename     <span class="comment"># 实时查看文件更新</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改权限</span></span><br><span class="line"><span class="built_in">chmod</span> 755 filename</span><br><span class="line"><span class="built_in">chmod</span> +x script.sh  <span class="comment"># 添加执行权限</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改所有者</span></span><br><span class="line"><span class="built_in">chown</span> user:group filename</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看磁盘使用</span></span><br><span class="line"><span class="built_in">df</span> -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看内存使用</span></span><br><span class="line">free -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看进程</span></span><br><span class="line">ps aux</span><br><span class="line">top</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install package_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start service</span><br><span class="line"><span class="built_in">sudo</span> systemctl stop service</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart service</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用技巧"><a href="#常用技巧" class="headerlink" title="常用技巧"></a>常用技巧</h2><ol>
+<li><strong>Tab 键自动补全</strong>: 输入命令或文件名的一部分后按 Tab 键</li>
+<li><strong>命令历史</strong>: 使用上下箭头键浏览历史命令</li>
+<li><strong>清屏</strong>: 使用 <code>clear</code> 命令或 Ctrl+L</li>
+<li><strong>查看命令帮助</strong>: <code>command --help</code> 或 <code>man command</code></li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>掌握这些基础命令是使用 Ubuntu 的第一步,后续可以深入学习更多高级功能。</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>操作系统</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客操作指南</title>
+    <url>/2020/09/14/Hexo-%E5%8D%9A%E5%AE%A2%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="Hexo-博客操作指南"><a href="#Hexo-博客操作指南" class="headerlink" title="Hexo 博客操作指南"></a>Hexo 博客操作指南</h1><p>这是一篇关于如何使用 Hexo 搭建和管理博客的教程文章。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="组合命令"><a href="#组合命令" class="headerlink" title="组合命令"></a>组合命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成并部署</span></span><br><span class="line">hexo generate --deploy</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章分类和标签"><a href="#文章分类和标签" class="headerlink" title="文章分类和标签"></a>文章分类和标签</h2><p>在文章的 Front-matter 中设置分类和标签:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">文章标题</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2020-09-14</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术教程</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">教程</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>:</p>
+<ul>
+<li><code>categories</code> 是层级结构的,可以有多个分类</li>
+<li><code>tags</code> 是平级的,用于标记关键词</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图片使用示例</title>
+    <url>/2026/02/25/%E5%9B%BE%E7%89%87%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/</url>
+    <content><![CDATA[<h1 id="图片使用示例"><a href="#图片使用示例" class="headerlink" title="图片使用示例"></a>图片使用示例</h1><p>本文演示如何使用 Hexo 的文章资源文件夹功能来方便地管理文章中的图片和其他资源文件。</p>
+<h2 id="什么是资源文件夹？"><a href="#什么是资源文件夹？" class="headerlink" title="什么是资源文件夹？"></a>什么是资源文件夹？</h2><p>资源文件夹是一个与文章同名的文件夹，用于存放该文章相关的所有资源文件（如图片、视频、文档等）。例如：</p>
+<ul>
+<li>文章：<code>图片使用示例.md</code></li>
+<li>资源文件夹：<code>图片使用示例/</code></li>
+</ul>
+<h2 id="功能配置"><a href="#功能配置" class="headerlink" title="功能配置"></a>功能配置</h2><p>在 <code>_config.yml</code> 中已经启用了资源文件夹功能：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="图片引用方式"><a href="#图片引用方式" class="headerlink" title="图片引用方式"></a>图片引用方式</h2><h3 id="方式-1-标准-Markdown-语法（推荐）"><a href="#方式-1-标准-Markdown-语法（推荐）" class="headerlink" title="方式 1: 标准 Markdown 语法（推荐）"></a>方式 1: 标准 Markdown 语法（推荐）</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">风景图片</span>](<span class="link">landscape.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这是最简单的方式，Hexo 会自动在资源文件夹中查找图片。</p>
+<h3 id="方式-2-相对路径引用"><a href="#方式-2-相对路径引用" class="headerlink" title="方式 2: 相对路径引用"></a>方式 2: 相对路径引用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">风景图片</span>](<span class="link">./图片使用示例/landscape.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式-3-使用-asset-img-标签"><a href="#方式-3-使用-asset-img-标签" class="headerlink" title="方式 3: 使用 asset_img 标签"></a>方式 3: 使用 asset_img 标签</h3><p>如果安装了 <code>hexo-asset-image</code> 插件，还可以使用：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img landscape.jpg 风景图片 %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方式-4-HTML-标签"><a href="#方式-4-HTML-标签" class="headerlink" title="方式 4: HTML 标签"></a>方式 4: HTML 标签</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/图片使用示例/landscape.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;风景图片&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li><p><strong>创建文章</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这会同时创建文章文件和同名资源文件夹。</p>
+</li>
+<li><p><strong>添加资源文件</strong><br>将图片、文档等文件放入资源文件夹中。</p>
+</li>
+<li><p><strong>在文章中引用</strong><br>使用上述任一方式引用资源。</p>
+</li>
+</ol>
+<h2 id="示例展示"><a href="#示例展示" class="headerlink" title="示例展示"></a>示例展示</h2><p>假设在 <code>图片使用示例/</code> 文件夹中有以下文件：</p>
+<ul>
+<li><code>demo.jpg</code> - 示例图片</li>
+<li><code>code.pdf</code> - 相关文档</li>
+<li><code>data.xlsx</code> - 数据表格</li>
+</ul>
+<h3 id="引用示例图片"><a href="#引用示例图片" class="headerlink" title="引用示例图片"></a>引用示例图片</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是示例图片：</span><br><span class="line">![<span class="string">示例图片</span>](<span class="link">demo.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>显示效果：<br><img src="/.io//demo.jpg" alt="示例图片"></p>
+<h3 id="链接到其他资源"><a href="#链接到其他资源" class="headerlink" title="链接到其他资源"></a>链接到其他资源</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [<span class="string">查看相关文档</span>](<span class="link">code.pdf</span>)</span><br><span class="line"><span class="bullet">-</span> [<span class="string">下载数据表格</span>](<span class="link">data.xlsx</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li><strong>命名规范</strong>：使用有意义的文件名，避免中文和特殊字符</li>
+<li><strong>文件大小</strong>：压缩图片以优化加载速度</li>
+<li><strong>文件夹整理</strong>：每篇文章一个独立文件夹，便于管理</li>
+<li><strong>备份</strong>：资源文件夹是博客内容的一部分，记得同步备份</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>资源文件夹名称必须与文章文件名完全一致</li>
+<li>文章文件名和资源文件夹名都不要包含特殊字符</li>
+<li>建议图片文件使用小写英文名称</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用资源文件夹功能可以让博客资源管理更加清晰和方便，是推荐的最佳实践。</p>
+]]></content>
+      <categories>
+        <category>博客使用</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习算法1：线性回归</title>
+    <url>/2020/09/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%951%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</url>
+    <content><![CDATA[<h1 id="机器学习算法1：线性回归"><a href="#机器学习算法1：线性回归" class="headerlink" title="机器学习算法1：线性回归"></a>机器学习算法1：线性回归</h1><p>线性回归是机器学习中最基础的算法之一,用于预测连续型数值。</p>
+<h2 id="什么是线性回归"><a href="#什么是线性回归" class="headerlink" title="什么是线性回归"></a>什么是线性回归</h2><p>线性回归是一种监督学习算法,通过拟合一条直线(或超平面)来描述自变量和因变量之间的关系。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>线性回归模型假设输入特征 X 和输出 y 之间存在线性关系:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">y = wX + b</span><br></pre></td></tr></table></figure>
+
+<p>其中:</p>
+<ul>
+<li>w: 权重(weight)</li>
+<li>b: 偏置(bias)</li>
+</ul>
+<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>线性回归通常使用均方误差(MSE)作为损失函数:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">J(w,b) = (1/n) * Σ(y_pred - y_actual)²</span><br></pre></td></tr></table></figure>
+
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><p>通过梯度下降算法来优化参数,使损失函数最小化。</p>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line"></span><br><span class="line"><span class="comment"># 准备数据</span></span><br><span class="line">X = np.array([[<span class="number">1</span>], [<span class="number">2</span>], [<span class="number">3</span>], [<span class="number">4</span>], [<span class="number">5</span>]])</span><br><span class="line">y = np.array([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建模型</span></span><br><span class="line">model = LinearRegression()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line">model.fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预测</span></span><br><span class="line">y_pred = model.predict([[<span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;预测值: <span class="subst">&#123;y_pred[<span class="number">0</span>]&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>线性回归是机器学习的入门算法,理解它对学习更复杂的算法非常重要。</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+        <category>算法系列</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>线性回归</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客文章</title>
+    <url>/2020/09/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>欢迎来到我的博客！这是我的第一篇博客文章。</p>
+<p>这里可以写下你的内容…</p>
+]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2026/02/25/%E5%9B%BE%E7%89%87%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/README/</url>
+    <content><![CDATA[<h1 id="资源文件夹使用说明"><a href="#资源文件夹使用说明" class="headerlink" title="资源文件夹使用说明"></a>资源文件夹使用说明</h1><h2 id="文件夹说明"><a href="#文件夹说明" class="headerlink" title="文件夹说明"></a>文件夹说明</h2><p>此文件夹是《图片使用示例》文章的资源文件夹，用于存放该文章相关的所有资源文件。</p>
+<h2 id="可以放置的文件类型"><a href="#可以放置的文件类型" class="headerlink" title="可以放置的文件类型"></a>可以放置的文件类型</h2><ul>
+<li>图片：<code>.jpg</code>, <code>.png</code>, <code>.gif</code>, <code>.svg</code>, <code>.webp</code></li>
+<li>文档：<code>.pdf</code>, <code>.doc</code>, <code>.docx</code></li>
+<li>数据：<code>.xlsx</code>, <code>.csv</code>, <code>.json</code></li>
+<li>压缩包：<code>.zip</code>, <code>.rar</code></li>
+<li>其他资源文件</li>
+</ul>
+<h2 id="引用示例"><a href="#引用示例" class="headerlink" title="引用示例"></a>引用示例</h2><p>假设文件夹中有 <code>demo.jpg</code> 图片，在文章中可以这样引用：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片说明</span>](<span class="link">demo.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件夹命名规则"><a href="#文件夹命名规则" class="headerlink" title="文件夹命名规则"></a>文件夹命名规则</h2><ul>
+<li>必须与对应的文章文件名完全相同</li>
+<li>例如：文章 <code>测试文章.md</code> 的资源文件夹为 <code>测试文章/</code></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2026/02/25/%E5%9B%BE%E7%89%87%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8%E7%A4%BA%E4%BE%8B/</url>
+    <content><![CDATA[<h1 id="图片引用示例"><a href="#图片引用示例" class="headerlink" title="图片引用示例"></a>图片引用示例</h1><h2 id="本文件夹用于演示图片引用方式"><a href="#本文件夹用于演示图片引用方式" class="headerlink" title="本文件夹用于演示图片引用方式"></a>本文件夹用于演示图片引用方式</h2><h2 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h2><p>请在实际使用时，将图片文件放入此文件夹：</p>
+<ul>
+<li><code>demo.jpg</code> - 示例图片（请添加）</li>
+<li><code>photo1.jpg</code> - 照片1（请添加）</li>
+<li><code>photo2.jpg</code> - 照片2（请添加）</li>
+<li><code>icon.png</code> - 图标（请添加）</li>
+</ul>
+<h2 id="在文章中引用这些图片"><a href="#在文章中引用这些图片" class="headerlink" title="在文章中引用这些图片"></a>在文章中引用这些图片</h2><h3 id="1-引用-demo-jpg"><a href="#1-引用-demo-jpg" class="headerlink" title="1. 引用 demo.jpg"></a>1. 引用 demo.jpg</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是示例图片：</span><br><span class="line">![<span class="string">示例图片</span>](<span class="link">demo.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-引用-photo1-jpg"><a href="#2-引用-photo1-jpg" class="headerlink" title="2. 引用 photo1.jpg"></a>2. 引用 photo1.jpg</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">照片1</span>](<span class="link">photo1.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-引用-photo2-jpg"><a href="#3-引用-photo2-jpg" class="headerlink" title="3. 引用 photo2.jpg"></a>3. 引用 photo2.jpg</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">照片2</span>](<span class="link">photo2.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-引用-icon-png"><a href="#4-引用-icon-png" class="headerlink" title="4. 引用 icon.png"></a>4. 引用 icon.png</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图标</span>](<span class="link">icon.png</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加图片的步骤"><a href="#添加图片的步骤" class="headerlink" title="添加图片的步骤"></a>添加图片的步骤</h2><ol>
+<li>准备图片文件</li>
+<li>将图片复制到此文件夹</li>
+<li>在 <code>图片使用示例.md</code> 文章中使用上述语法引用</li>
+<li>运行 <code>npm run dev</code> 预览效果</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>确保图片文件名与引用代码中的文件名一致</li>
+<li>建议使用小写英文字母命名</li>
+<li>支持的格式：jpg, png, gif, svg, webp</li>
+</ul>
+]]></content>
+  </entry>
+</search>

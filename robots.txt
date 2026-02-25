@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Allow: /
+Sitemap: https://hiddenguy1.github.io/sitemap.xml
