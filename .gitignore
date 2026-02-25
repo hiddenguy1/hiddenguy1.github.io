@@ -1,9 +1,10 @@
 # Hexo 目录
 node_modules/
 public/
-.db.json
+*.db.json
 *.log
 deploy_git/
+.deploy_git/
 
 # IDE 配置
 .vscode/
